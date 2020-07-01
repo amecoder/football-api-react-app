@@ -15,9 +15,11 @@ class Calendar extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
+		this.props.setRange(this.state.date);
 	};
 
 	render() {
+
 		return (
 			<div className="calendar">
 				<ReactCalendar
@@ -25,7 +27,7 @@ class Calendar extends Component {
 					onChange={this.handleChange}
 					selectRange={true}
 				/>
-				<button className="calender-button">검색</button>
+				<button className="calender-button" onClick={this.handleSubmit}>검색</button>
 			</div>
 		);
 	}
